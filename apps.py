@@ -11,28 +11,50 @@ class Mygrid(GridLayout):
         super(Mygrid, self).__init__(**kwargs) 
         # build columns
         self.cols = 1
+        self.padding = 300
+        # self.spacing = 40
         # Create top grid
         self.top_grid = GridLayout()
         self.top_grid.cols = 2
         #add widgets Username
-        self.top_grid.add_widget(Label(text='Username: '))
-        #add inputbox 
-        self.name = TextInput(multiline=False)
+        self.top_grid.add_widget(Label(text='Username: ',font_size=32,
+        size_hint_y=None,
+        height=100))
+        #add inputbox
+        self.name = TextInput(multiline=False,font_size=32,
+        size_hint_y=None,
+        height=100)
         self.top_grid.add_widget(self.name)
         #add widgets IP
-        self.top_grid.add_widget(Label(text='Ip Address: '))
-        #add inputbox 
-        self.ip = TextInput(multiline=False)
+        self.top_grid.add_widget(Label(text='Ip Address: ',font_size=32,
+        size_hint_y=None,
+        height=100))
+        #add inputbox
+        self.ip = TextInput(multiline=False,font_size=32,
+        size_hint_y=None,
+        height=100)
         self.top_grid.add_widget(self.ip)
         self.add_widget(self.top_grid)
         #button
-        self.submit = Button(text='submit', font_size=32)
+        self.submit = Button(text='submit',
+        font_size=32,
+        size_hint_y=None,
+        height=100,
+        size_hint_x=None,
+        width=200)
         self.submit.bind(on_press=self.press) 
         self.add_widget(self.submit)
+    
+    #interact with button
     def press(self,instance):
         name = self.name.text
         ips = self.ip.text
-        self.add_widget(Label(text=f'hello\r{name} , your ip is {ips}'))
+        if name == 'leon' and ips == '1010':
+            self.add_widget(Label(text=f'hello\r{name} , your ip is {ips}'))
+        else:
+            self.add_widget(Label(text='Username or Password is not correct'))
+
+        
         #Clear boxs
         self.name.text = ''
         self.ip.text = ''
