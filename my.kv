@@ -1,19 +1,31 @@
 <Mygrid>
+    name:name
+    password:password
+
     GridLayout:
         cols:1
-
+        size: root.width , root.height
         GridLayout:
-            cols:2
+            cols:
             Label:
-                text: "Username: "
-                font_size: 14
+                id:name
+                size_hint_y: 0.1
+                text: "Username:"
+                font_size: 18
             TextInput:
+                size_hint_y: 0.1
                 multiline: False
+            
             Label:
+                id:password
+                size_hint_y: 0.1
                 text: "Password"
-                font_size:14
+                font_size:18
             TextInput:
+                size_hint_y: 0.1
                 multiline: False
         Button:
+            size_hint_y: 0.1
             text: 'submit'
             font_size: 20
+            on_press: root.press()

@@ -4,14 +4,20 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.uix.widget import Widget
+from kivy.properties import ObjectProperty
 
 
 class Mygrid(Widget):
-
+    name = ObjectProperty(None)
+    password = ObjectProperty(None)
     #interact with button
-    def press(self,instance):
+    def press(self):
+        self.name.text
+        self.password.text
+        print('Hello')
         self.name.text = ''
         self.password.text = ''
+
 
 
 class Myapp(App):
