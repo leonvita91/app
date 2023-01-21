@@ -10,15 +10,8 @@ class Mygrid(Widget):
 
     #interact with button
     def press(self,instance):
-        name = self.name.text
-        ips = self.ip.text
-        # if name == 'leon' and ips == '1010':
-        #     self.add_widget(Label(text=f'hello\r{name} , your ip is {ips}'))
-        # else:
-        #     self.add_widget(Label(text='Username or Password is not correct'))
-        #Clear boxs
         self.name.text = ''
-        self.ip.text = ''
+        self.password.text = ''
 
 
 class Myapp(App):
