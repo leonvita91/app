@@ -1,17 +1,19 @@
-<Mygrid>
+<Mygrid>: 
     name:name
     password:password
     result:result
     
     GridLayout:
-        cols:2
+        cols: 1
+        rows: 3
         size: root.width , root.height
         GridLayout:
             cols:2
+            rows: 3
             Label:
-                size_hint_y: 3
+                size_hint_y: 1
                 text: "Username:"
-                font_size: 18
+                font_size: 48
             TextInput:
                 id:name
                 size_hint_y: 0.1
@@ -19,16 +21,15 @@
             Label:
                 size_hint_y: 3
                 text: "Password"
-                font_size:18
+                font_size: 48
             TextInput:
                 id:password
                 size_hint_y: 0.1
                 multiline: False           
-            Label:
-                id:result
-                text: "result"
-            TextInput:
-                multiline:False
+        Label:
+            id:result
+            text: "Result:"
+            font_size: 48
         Button:
             size_hint_y: 0.1
             text: 'submit'

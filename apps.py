@@ -8,7 +8,7 @@ from kivy.properties import ObjectProperty
 # use to target the .kv files
 from kivy.lang import Builder
 
-# target any kv files
+# target any kv
 Builder.load_file('login.kv')
 
 
