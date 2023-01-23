@@ -1,20 +1,35 @@
 from kivy.app import App
-from kivy.uix.label import Label
-from kivy.uix.gridlayout import GridLayout
-from kivy.uix.textinput import TextInput
-from kivy.uix.button import Button
+# from kivy.uix.label import Label
+# from kivy.uix.gridlayout import GridLayout
+# from kivy.uix.textinput import TextInput
+# from kivy.uix.button import Button
 from kivy.uix.widget import Widget
 from kivy.properties import ObjectProperty
+# use to target the .kv files
+from kivy.lang import Builder
+
+# target any kv files
+Builder.load_file('login.kv')
 
 
 class Mygrid(Widget):
+    # set kv value to none
     name = ObjectProperty(None)
     password = ObjectProperty(None)
+    result = ObjectProperty(None)
+
     #interact with button
     def press(self):
-        self.name.text
-        self.password.text
-        print('Hello')
+        name = self.name.text
+        password = self.password.text
+        result = self.result.text
+
+        if name == 'leon':
+            print(f'welcome: {name} you password is {password}')
+        else:
+            result = 'Wrong Input'
+            print(result)
+            
         self.name.text = ''
         self.password.text = ''
 
